@@ -1,0 +1,107 @@
+/* Movil */
+@media only screen and (max-width: 767px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px; /* Más espacio en los bordes */
+    background-color: rgba(0, 0, 0, 0.9);
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .logo {
+    position: absolute;
+    right: 30px; /* Más espacio a la derecha */
+    top: 15px;
+    z-index: 998; /* Menor que el menú */
+    transform: scale(0.7); /* Reducido al 70% */
+    transition: transform 0.2s ease;
+  }
+
+  .logo img {
+    width: 40px; /* Tamaño fijo */
+    height: auto;
+  }
+
+  .menu-toggle {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #111;
+    padding: 10px 20px;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999; /* Mayor que el logo */
+  }
+
+  .menu-toggle:checked ~ nav {
+    transform: translateY(0);
+  }
+
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .menu-links li {
+    padding: 10px 0;
+  }
+
+  /* Ocultar galería y .img1 */
+  .galeria,
+  .img1 {
+    display: none;
+  }
+
+  /* Ajuste en el cuerpo */
+  .img2 {
+    background-image: url(img/slipknot_2025.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 40px 20px;
+  }
+
+  .intro-text {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  /* Footer */
+  footer {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px 15px;
+    text-align: center;
+  }
+}
