@@ -22,12 +22,11 @@ header {
     color: #fff;
     padding: 10px; */
     grid-area: 'header';
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.3); /* Fondo oscuro semitransparente */
-    color: white;
+    background-color: black;
     padding: 15px;
     text-align: center;
     z-index: 1000; /* Para que esté por encima de otros elementos */
@@ -38,6 +37,7 @@ nav {
     display: flex;
     justify-content: space-around;
     /* border: 1px solid white; */
+    flex-direction: row;
 }
 
 nav ul {
@@ -55,11 +55,13 @@ ul {
 
 .left{
     display: flex;
+    flex-direction: row;
     justify-content: end;
 }
 
 .right{
     display: flex;
+    flex-direction: row;
 }
 
 /* Hamburguesa */
