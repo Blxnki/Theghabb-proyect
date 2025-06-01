@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+        'header' 'header' 1fr
+        'main' 'main' 1fr
+        'footer' 'footer' 1fr / 1fr 1fr;
+    font-family: 'Bangers', sans-serif; /* Fuente más rebelde */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    max-width: 1550px;
+    background-color: #1A1A1D;
+}
+
+header {
+    grid-area: 'header';
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con más contraste */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    max-width: 1550px;
+    border-bottom: 2px solid #E91E63; /* Línea de borde rosa potente */
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.left {
+    display: flex;
+    justify-content: end;
+}
+
+.right {
+    display: flex;
+}
+
+/* Enlace con estilo punk */
+a {
+    color: #E91E63; /* Rosa vibrante */
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    background-color: #333;
+    color: #FFD700; /* Dorado brillante */
+    border-bottom: 2px solid #FFD700; /* Subrayado en dorado */
+}
+
+/* Main */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #F44336; /* Rojo intenso */
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: #F44336;
+    color: #FFF;
+}
+
+h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #FFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+}
+
+div {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+/* galeria */
+.galeria {
+    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+    display: flex;
+    justify-content: center; /* Centra el contenido */
+    overflow: hidden; /* Oculta las imágenes que se salen */
+    position: relative;
+    background: transparent; /* Fondo oscuro */
+    padding: 20px 0;
+    height: 100vh; /* Toma toda la altura de la pantalla */
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+}
+
+.galeria-contenedor {
+    display: flex;
+    gap: 10px;
+    animation: slide 20s linear infinite; /* Efecto de desplazamiento infinito */
+    width: max-content; /* Asegura que el contenedor solo ocupe el espacio necesario */
+}
+
+.galeria img {
+    height: 150px; /* Ajusta según necesites */
+    object-fit: cover;
+    border-radius: 10px; /* Bordes redondeados opcionales */
+}
+
+.galeria2 {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    padding: 20px 0;
+}
+
+.galeria-contenedor2 {
+    display: flex;
+    gap: 10px;
+    width: max-content; /* Para que el contenido se desplace sin problemas */
+    animation: slide 20s linear infinite; 
+}
+
+.galeria2 img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Animación para mover la galería de derecha a izquierda */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-40%);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    max-width: 1550px;
+    border-top: 3px solid #E91E63; /* Borde superior rosa para enfatizar el estilo punk */
+}
