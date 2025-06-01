@@ -7,24 +7,36 @@
     <title>TheGhabB</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="media.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css "
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <header>
-        <nav>
-            <ul class="left">
-                <li><a href="nu-metal/index(e).html">nu-metal</a></li>
-                <li><a href="hardcore/index(e).html">hardcore</a></li>
-            </ul>
-            <ul>
-                <li><a href="#"><img src="img/logo.png" alt="" width="50" height="50"></a></li>
-            </ul>
-            <ul class="right">
-                <li><a href="black/index(e).html">black</a></li>
-                <li><a href="death/index(e).html">Death</a></li>
-                <li><a href="curiosidades/index(e).html">curiosities</a></li>
-            </ul>
-        </nav>
+        <!-- Checkbox oculto para controlar el menú -->
+    <input type="checkbox" class="menu-toggle" id="menu-toggle">
+    <!-- Botón hamburguesa -->
+    <label for="menu-toggle" class="hamburger" aria-label="Menú">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </label>
+
+    <!-- Logo (fuera del menú hamburguesa) -->
+    <div class="logo">
+      <a href="#"><img src="img/logo.png" alt="Logo" width="50" height="50"></a>
+    </div>
+
+    <!-- Menú de navegación (dentro del hamburguesa) -->
+    <nav>
+      <ul class="menu-links">
+        <li><a href="nu-metal/index(e).html">nu-metal</a></li>
+        <li><a href="hardcore/index(e).html">hardcore</a></li>
+        <li><a href="black/index(e).html">black</a></li>
+        <li><a href="death/index(e).html">Death</a></li>
+        <li><a href="curiosidades/index(e).html">curiosidades</a></li>
+      </ul>
+    </nav>
     </header>
     <main>
         <section class="img1">
