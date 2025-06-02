@@ -1,4 +1,3 @@
-
 * {
     padding: 0;
     margin: 0;
@@ -6,112 +5,134 @@
 }
 
 body {
-    font-family: 'Anton', Arial, sans-serif;
-    text-transform: uppercase;
-    background: black url('concrete-texture.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #c0c0c0;
     display: grid;
     grid-template-areas: 
-        'header'
-        'main'
-        'footer';
+        'header' 'header' 1fr
+        'main' 'main' 1fr
+        'footer' 'footer' 1fr / 1fr 1fr;
+    font-family: 'Bangers', sans-serif; /* Fuente más rebelde */
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
+    background-color: #1A1A1D;
 }
 
-/* CABECERA */
 header {
-    grid-area: header;
+    grid-area: 'header';
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(20, 20, 20, 0.9); /* Fondo negro con transparencia */
-    color: red;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con más contraste */
+    color: white;
     padding: 20px;
     text-align: center;
-    text-shadow: 3px 3px 10px rgba(138, 43, 226, 0.7); /* Sombra morada */
-    border-bottom: 3px solid red;
+    max-width: 1550px;
+    border-bottom: 2px solid #E91E63; /* Línea de borde rosa potente */
 }
 
-/* MENÚ */
 nav {
     display: flex;
-    justify-content: center;
-    padding: 10px 0;
+    justify-content: space-around;
 }
 
 nav ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 15px;
 }
 
-nav a {
-    color: red;
+.left {
+    display: flex;
+    justify-content: end;
+}
+
+.right {
+    display: flex;
+}
+
+/* Enlace con estilo punk */
+a {
+    color: #E91E63; /* Rosa vibrante */
     text-decoration: none;
-    padding: 10px 15px;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    text-shadow: 2px 2px 10px rgba(138, 43, 226, 0.7); /* Sombra morada */
+    padding: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
 }
 
-nav a:hover {
-    background: red;
-    color: black;
-    text-shadow: 2px 2px 10px black;
+a:hover {
+    background-color: #333;
+    color: #FFD700; /* Dorado brillante */
+    border-bottom: 2px solid #FFD700; /* Subrayado en dorado */
 }
 
-/* CONTENIDO PRINCIPAL */
+/* Main */
 main {
-    max-width: 900px;
+    max-width: 800px;
     margin: 20px auto;
-    background: #111;
-    padding: 30px;
+    background: #F44336; /* Rojo intenso */
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    border: 3px solid red;
-    box-shadow: 0 0 20px rgba(138, 43, 226, 0.7); /* Sombra morada */
+    background-color: #F44336;
+    color: #FFF;
 }
 
 h3 {
     font-size: 2.5rem;
-    color: red;
-    text-align: center;
-    text-shadow: 3px 3px 10px rgba(138, 43, 226, 0.7); /* Sombra morada */
+    margin-bottom: 10px;
+    color: #FFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+}
+
+div {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
 }
 
 iframe {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
 }
 
-/* GALERÍA (SE MANTIENE IGUAL) */
+/* galeria */
 .galeria {
-    width: 100%;
+    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
     display: flex;
-    justify-content: center;
-    overflow: hidden;
+    justify-content: center; /* Centra el contenido */
+    overflow: hidden; /* Oculta las imágenes que se salen */
     position: relative;
-    background: transparent;
+    background: transparent; /* Fondo oscuro */
     padding: 20px 0;
-    height: 100vh;
-    align-items: center;
+    height: 100vh; /* Toma toda la altura de la pantalla */
+    display: flex;
+    align-items: center; /* Centra verticalmente */
 }
 
 .galeria-contenedor {
     display: flex;
     gap: 10px;
-    animation: slide 20s linear infinite;
-    width: max-content;
+    animation: slide 20s linear infinite; /* Efecto de desplazamiento infinito */
+    width: max-content; /* Asegura que el contenedor solo ocupe el espacio necesario */
 }
 
 .galeria img {
-    height: 150px;
+    height: 150px; /* Ajusta según necesites */
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 10px; /* Bordes redondeados opcionales */
 }
 
-/* SEGUNDA GALERÍA */
 .galeria2 {
     width: 100%;
     overflow: hidden;
@@ -123,8 +144,8 @@ iframe {
 .galeria-contenedor2 {
     display: flex;
     gap: 10px;
-    width: max-content;
-    animation: slide 20s linear infinite;
+    width: max-content; /* Para que el contenido se desplace sin problemas */
+    animation: slide 20s linear infinite; 
 }
 
 .galeria2 img {
@@ -143,12 +164,13 @@ iframe {
     }
 }
 
-/* PIE DE PÁGINA */
+/* Footer */
 footer {
-    background-color: black;
-    color: red;
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    padding: 15px;
-    border-top: 3px solid red;
-    text-shadow: 2px 2px 10px rgba(138, 43, 226, 0.7); /* Sombra morada */
+    padding: 1rem;
+    width: 100%;
+    max-width: 1550px;
+    border-top: 3px solid #E91E63; /* Borde superior rosa para enfatizar el estilo punk */
 }
