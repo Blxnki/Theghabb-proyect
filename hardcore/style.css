@@ -26,7 +26,6 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
-    max-width: 1550px;
     border-bottom: 2px solid #E91E63; /* Línea de borde rosa potente */
 }
 
@@ -74,7 +73,7 @@ a:hover {
 
 /* Main */
 main {
-    max-width: 800px;
+    max-width: 900px;
     margin: 20px auto;
     background: #F44336; /* Rojo intenso */
     padding: 20px;
@@ -171,6 +170,5 @@ footer {
     text-align: center;
     padding: 1rem;
     width: 100%;
-    max-width: 1550px;
     border-top: 3px solid #E91E63; /* Borde superior rosa para enfatizar el estilo punk */
 }
