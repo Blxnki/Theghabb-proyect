@@ -5,154 +5,104 @@
     box-sizing: border-box;
 }
 
-body{
+body {
+    font-family: 'Anton', Arial, sans-serif;
+    text-transform: uppercase;
+    background: black url('concrete-texture.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #c0c0c0;
     display: grid;
-
     grid-template-areas: 
-        'header''header' 50px
-        'main''main' 100px
-        'footer''footer' 100px/
-        1fr        1fr;
-    ;
-    
+        'header'
+        'main'
+        'footer';
+    line-height: 1.6;
 }
 
-/* cabecera */
+/* CABECERA */
 header {
-    grid-area: 'header';
+    grid-area: header;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Fondo oscuro semitransparente */
-    background-color: black;
-    padding: 15px;
+    background: rgba(20, 20, 20, 0.9); /* Fondo negro con transparencia */
+    color: red;
+    padding: 20px;
     text-align: center;
-    z-index: 1000; /* Para que esté por encima de otros elementos */
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;     /* Centra verticalmente */
+    text-shadow: 3px 3px 10px rgba(138, 43, 226, 0.7); /* Sombra morada */
+    border-bottom: 3px solid red;
 }
 
-/* menu */
+/* MENÚ */
 nav {
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
+    justify-content: center;
+    padding: 10px 0;
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-ul {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
 }
 
-.left{
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-}
-
-.right{
-    display: flex;
-    flex-direction: row;
-}
-
-/* Hamburguesa */
-.menu-toggle {
-  display: none; /* Oculto por defecto */
-}
-
-.hamburger {
-  display: none; /* Se muestra solo en móviles */
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.logo {
-  position: relative;
-  z-index: 999;
-}
-/* Enlace */
-a {
-    color: #fff;
+nav a {
+    color: red;
     text-decoration: none;
-    padding: 10px;
-    
-    transition: background-color 0.3s ease;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 10px rgba(138, 43, 226, 0.7); /* Sombra morada */
 }
 
-a:hover {
-    background-color: #444;
+nav a:hover {
+    background: red;
+    color: black;
+    text-shadow: 2px 2px 10px black;
 }
 
-/* cuerpo */
-
-main{
-    grid-area: 'main';
+/* CONTENIDO PRINCIPAL */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+    border: 3px solid red;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.7); /* Sombra morada */
 }
 
-.img1{
-    background-image: url(img/Wall-of-Deaths.png);/* Imagen de fondo */
-    background-attachment: fixed;/* La imagen permanece fija al desplazarse */
-    background-size: cover;/* Ajusta la imagen para cubrir el contenedor */
-    background-position: center;/* Centra la imagen */
-    height: 100vh;/* Ocupa toda la altura de la ventana */
-}
-
-.img2{
-    height: 100vh;
-    background-image: url(img/slipknot_2025.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
-
-h3{
-    color: #fff;
+h3 {
+    font-size: 2.5rem;
+    color: red;
     text-align: center;
-    padding: 20px;
-
-    background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0));
+    text-shadow: 3px 3px 10px rgba(138, 43, 226, 0.7); /* Sombra morada */
 }
 
-div{
-    display: flex;
-    justify-content: center;
-    display: flex;
-    color: #fff;
-    padding: 20px;
-    max-width: 1920px;
-    background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0));
+iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* GALERÍA (SE MANTIENE IGUAL) */
 .galeria {
-    width: 100%;/* Ocupa todo el ancho */
+    width: 100%;
     display: flex;
     justify-content: center;
-    overflow: hidden;/* Oculta el contenido que se desborda */
+    overflow: hidden;
     position: relative;
     background: transparent;
     padding: 20px 0;
-    height: 100vh;/* Altura igual a la ventana */
+    height: 100vh;
     align-items: center;
 }
 
 .galeria-contenedor {
     display: flex;
     gap: 10px;
-    animation: slide 20s linear infinite;/* Aplica la animación de desplazamiento */    
-    width: max-content;/* Ajusta el ancho al contenido */
+    animation: slide 20s linear infinite;
+    width: max-content;
 }
 
 .galeria img {
@@ -186,29 +136,19 @@ div{
 /* Animación para mover la galería de derecha a izquierda */
 @keyframes slide {
     from {
-        transform: translateX(0);/* Inicia en la posición original */
+        transform: translateX(0);
     }
     to {
-        transform: translateX(-40%);/* Desplaza el contenido hacia la izquierda */
+        transform: translateX(-40%);
     }
 }
 
-/* footer */
-
+/* PIE DE PÁGINA */
 footer {
-    grid-area: 'footer';
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    color: white;
-    padding: 15px;
+    background-color: black;
+    color: red;
     text-align: center;
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;     /* Centra verticalmente */
+    padding: 15px;
+    border-top: 3px solid red;
+    text-shadow: 2px 2px 10px rgba(138, 43, 226, 0.7); /* Sombra morada */
 }
-
-
-
