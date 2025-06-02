@@ -1,38 +1,43 @@
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body {
+body{
     display: grid;
+
     grid-template-areas: 
-        'header' 'header' 1fr
-        'main' 'main' 1fr
-        'footer' 'footer' 1fr / 1fr 1fr;
-    font-family: 'Bangers', sans-serif; /* Fuente más rebelde */
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #1A1A1D;
+        'header''header' 50px
+        'main''main' 100px
+        'footer''footer' 100px/
+        1fr        1fr;
+    ;
+    
 }
 
+/* cabecera */
 header {
     grid-area: 'header';
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con más contraste */
-    color: white;
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.3); /* Fondo oscuro semitransparente */
+    background-color: black;
+    padding: 15px;
     text-align: center;
-    max-width: 1550px;
-    border-bottom: 2px solid #E91E63; /* Línea de borde rosa potente */
+    z-index: 1000; /* Para que esté por encima de otros elementos */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
 }
 
+/* menu */
 nav {
     display: flex;
     justify-content: space-around;
+    flex-direction: row;
 }
 
 nav ul {
@@ -45,94 +50,118 @@ ul {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
 }
 
-.left {
+.left{
     display: flex;
+    flex-direction: row;
     justify-content: end;
 }
 
-.right {
+.right{
     display: flex;
+    flex-direction: row;
 }
 
-/* Enlace con estilo punk */
+/* Hamburguesa */
+.menu-toggle {
+  display: none; /* Oculto por defecto */
+}
+
+.hamburger {
+  display: none; /* Se muestra solo en móviles */
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.logo {
+  position: relative;
+  z-index: 999;
+}
+/* Enlace */
 a {
-    color: #E91E63; /* Rosa vibrante */
+    color: #fff;
     text-decoration: none;
     padding: 10px;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    
+    transition: background-color 0.3s ease;
 }
 
 a:hover {
-    background-color: #333;
-    color: #FFD700; /* Dorado brillante */
-    border-bottom: 2px solid #FFD700; /* Subrayado en dorado */
+    background-color: #444;
 }
 
-/* Main */
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    background: #F44336; /* Rojo intenso */
+/* cuerpo */
+
+main{
+    grid-area: 'main';
+}
+
+.img1{
+    background-image: url(img/Wall-of-Deaths.png);/* Imagen de fondo */
+    background-attachment: fixed;/* La imagen permanece fija al desplazarse */
+    background-size: cover;/* Ajusta la imagen para cubrir el contenedor */
+    background-position: center;/* Centra la imagen */
+    height: 100vh;/* Ocupa toda la altura de la ventana */
+}
+
+.img2{
+    height: 100vh;
+    background-image: url(img/slipknot_2025.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+h3{
+    color: #fff;
+    text-align: center;
     padding: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    background-color: #F44336;
-    color: #FFF;
+
+    background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0));
 }
 
-h3 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #FFF;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+div{
     display: flex;
     justify-content: center;
-}
-
-div {
-    margin-bottom: 15px;
     display: flex;
-    justify-content: center;
+    color: #fff;
+    padding: 20px;
+    max-width: 1920px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0));
 }
 
-iframe {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-}
-
-/* galeria */
 .galeria {
-    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+    width: 100%;/* Ocupa todo el ancho */
     display: flex;
-    justify-content: center; /* Centra el contenido */
-    overflow: hidden; /* Oculta las imágenes que se salen */
+    justify-content: center;
+    overflow: hidden;/* Oculta el contenido que se desborda */
     position: relative;
-    background: transparent; /* Fondo oscuro */
+    background: transparent;
     padding: 20px 0;
-    height: 100vh; /* Toma toda la altura de la pantalla */
-    display: flex;
-    align-items: center; /* Centra verticalmente */
+    height: 100vh;/* Altura igual a la ventana */
+    align-items: center;
 }
 
 .galeria-contenedor {
     display: flex;
     gap: 10px;
-    animation: slide 20s linear infinite; /* Efecto de desplazamiento infinito */
-    width: max-content; /* Asegura que el contenedor solo ocupe el espacio necesario */
+    animation: slide 20s linear infinite;/* Aplica la animación de desplazamiento */    
+    width: max-content;/* Ajusta el ancho al contenido */
 }
 
 .galeria img {
-    height: 150px; /* Ajusta según necesites */
+    height: 150px;
     object-fit: cover;
-    border-radius: 10px; /* Bordes redondeados opcionales */
+    border-radius: 10px;
 }
 
+/* SEGUNDA GALERÍA */
 .galeria2 {
     width: 100%;
     overflow: hidden;
@@ -144,8 +173,8 @@ iframe {
 .galeria-contenedor2 {
     display: flex;
     gap: 10px;
-    width: max-content; /* Para que el contenido se desplace sin problemas */
-    animation: slide 20s linear infinite; 
+    width: max-content;
+    animation: slide 20s linear infinite;
 }
 
 .galeria2 img {
@@ -157,20 +186,29 @@ iframe {
 /* Animación para mover la galería de derecha a izquierda */
 @keyframes slide {
     from {
-        transform: translateX(0);
+        transform: translateX(0);/* Inicia en la posición original */
     }
     to {
-        transform: translateX(-40%);
+        transform: translateX(-40%);/* Desplaza el contenido hacia la izquierda */
     }
 }
 
-/* Footer */
+/* footer */
+
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
+    grid-area: 'footer';
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    max-width: 1550px;
-    border-top: 3px solid #E91E63; /* Borde superior rosa para enfatizar el estilo punk */
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
 }
+
+
+
