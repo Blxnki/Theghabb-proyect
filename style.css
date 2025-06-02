@@ -19,9 +19,6 @@ body{
 
 /* cabecera */
 header {
-    /* background-color: #333;
-    color: #fff;
-    padding: 10px; */
     grid-area: 'header';
     top: 0;
     left: 0;
@@ -31,13 +28,15 @@ header {
     padding: 15px;
     text-align: center;
     z-index: 1000; /* Para que esté por encima de otros elementos */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
 }
 
 /* menu */
 nav {
     display: flex;
     justify-content: space-around;
-    /* border: 1px solid white; */
     flex-direction: row;
 }
 
@@ -133,7 +132,7 @@ div{
     display: flex;
     color: #fff;
     padding: 20px;
-    max-width: 1500px;
+    max-width: 1920px;
     background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0));
 }
 
@@ -202,11 +201,13 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Fondo oscuro semitransparente */
+    background: rgba(0, 0, 0, 0.3);
     color: white;
     padding: 15px;
     text-align: center;
-    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
 }
 
 
